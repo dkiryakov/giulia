@@ -1,0 +1,785 @@
+/* Reset Styles */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #8d8d95;
+}
+
+/* Remove default image styles */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Declare fonts   
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('../fonts/Switzer-Regular.woff2') format('woff2'),
+         url('../fonts/Switzer-Regular.woff') format('woff'),
+         url('../fonts/Switzer-Regular.ttf') format('truetype');
+         font-weight: 400;
+         font-display: swap;
+         font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Switzer';
+    src: url('../fonts/Switzer-Bold.woff2') format('woff2'),
+         url('../fonts/Switzer-Bold.woff') format('woff'),
+         url('../fonts/Switzer-Bold.ttf') format('truetype');
+         font-weight: 700;
+         font-display: swap;
+         font-style: normal;
+  }
+*/
+
+/* Body defaults */
+body {
+    line-height: 1;
+    font-family: 'Switzer', sans-serif; /* Replace with your preferred font */
+    background-color: #ffffff;
+    color: rgb(25, 33, 61);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+}
+
+/* Base Styles */
+/* Root font size for easy rem calculations */
+html {
+    font-size: 16px; /* 1rem = 16px */
+}
+
+/* General container utility */
+.container {
+    width: 100%;
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+/* Flex utilities */
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Visibility utilities */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+/* Button reset and base */
+button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+
+/* Accessible focus styles */
+:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+}
+
+/* DK Styles */
+
+header {
+    position: sticky;
+    z-index: 999;
+    top: 0;
+    background-color: white;
+}
+
+.desktop li {
+    display:inline-block;
+}
+
+.list-nav-menu {
+    padding: 1.25rem 0;
+    text-transform: uppercase;
+}
+
+.desktop li:not(:last-child) {
+    padding-right: 22px;
+}
+
+.hero {
+    display: flex;
+    height: 696px;
+    background-image: url('./img/beauty-and-wellness-hero-hair-x-webflow-template.jpg');
+    background-position: center;
+    background-size: cover;
+    max-width: 80.625rem;
+    margin:auto;
+    border-radius: 1rem;
+    position: relative;
+    padding: 40px 58px;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 30, 36, .3); /* Adjust the opacity for the darkening effect */
+    z-index: 1;
+    border-radius: 1rem;
+}
+
+.hero-cta {
+    display:grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: auto;
+    align-items: center;
+    align-content: flex-end;
+    z-index: 2;
+    gap: 40px;
+}
+
+
+h1 {
+    font-size: 72px;
+    color: white;
+
+}
+
+.button-light {
+    border: 1px solid white;
+    background-color: transparent;
+    color: #fff8f4;
+    padding: 13px 22px;
+    font-size: 16px;
+    line-height: 1.375em;
+    border-radius: 100px;
+    transition: all 0.3s ease, transform 0.3s ease;
+
+}
+
+.button-light:hover {
+    background-color: white;
+    color: #000;
+    padding: 10px 18px;
+    margin: 3px 4px;
+    
+}
+
+.hero-cta .box {
+    display: flex;
+    justify-content: center; /* Center-align content within each box */
+    align-items: center;
+}
+
+@media only screen and (max-width:1290px){
+    body {
+        padding: 0 24px;
+    }
+}
+
+@media only screen and (max-width:768px){
+    body {
+        padding: 0 24px;
+    }
+
+    .hero-cta{
+        justify-items: start;
+        grid-row-gap: 24px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+
+    }
+
+    h1 {
+        font-size: 62px;
+    }
+
+}
+
+.about {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    gap: 24px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    display: grid;
+}
+
+
+
+h2 {
+    font-size: 48px;
+    color: #1e1e24;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.556em;
+    color: #414147;
+    max-width: 518px;
+    justify-self: end;
+}
+
+.button-dark {
+    border: 1px solid #000;
+    background-color: transparent;
+    color: #000;
+    padding: 13px 22px;
+    font-size: 16px;
+    line-height: 1.375em;
+    border-radius: 100px;
+    transition: all 0.3s ease, transform 0.3s ease;
+
+}
+
+.button-dark:hover {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    padding: 10px 18px;
+    margin: 3px 4px;
+    
+}
+.about .box-div {
+    flex-grow: 0;
+    height:auto;
+}
+
+.grid img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  
+  .grid-playground h2{
+      text-align: center;
+      padding: 24px 0;
+  
+  }
+  
+  .grid {
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-flow: column;
+      gap: 20px;
+  }
+  
+  
+  .box-1{
+      grid-area: 1 / 1 / 3 / 1;
+  }
+  
+  .box-4{
+      grid-area: 1 / 3 / 3 / 3;
+  }
+
+@media only screen and (max-width:768px){
+    .about{
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    }
+
+    .about p {
+        max-width: 100%;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .logo {
+        align-self: center;
+        flex-grow: 1;
+        z-index: 101;
+    }
+
+    .logo img {
+        margin: 0 auto;
+    }
+
+    .list-nav-menu {
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+    }
+
+    .hero {
+        padding: 1.5rem 1rem;
+        height: 90vh;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+        overflow: hidden;
+    }
+
+    .box-4{
+        grid-area: 3 / 2 / 5 / 2;
+    }
+}
+
+
+
+
+
+/* Lytbox nav */
+/* edit the hamburger and close icon colors here */
+
+.lytbox-button {
+	--hamburger-color: #000;
+	--close-x-color: #000;
+	display: block;
+	height: 1rem;
+	cursor: pointer;
+	position: relative;
+	z-index: 101;
+}
+
+@media only screen and (min-width: 769px) {
+    .lytbox-button {
+        display: none;
+    }
+    
+}
+
+
+/* must add in elementor template ID number to make the menu full width */
+.elementor-265 {
+	width: 100%;
+}
+
+
+/* end editing */
+
+.lytbox-navigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translateX(100%);
+	overflow: hidden;
+	transition: transform 0.2s;
+	width: 100%;
+	height: 100vh;
+	z-index: 100;
+    background-color: #fff;
+}
+
+.lytbox-navigation {
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.lytbox-navigation ul li {
+    display:block;
+    margin: 2rem;
+    text-align: center;
+}
+.lytbox-navigation > ul > li  {
+    padding: 1.25rem 0;
+    text-transform: capitalize;
+    padding-right: 0px;
+}
+
+.lytbox-navigation nav ul li:not(:last-child) {
+    padding-right: 22px;
+}
+
+
+
+/* toggle hamburger*/
+
+.lytbox-button .hamburguer {
+	position: relative;
+}
+
+.lytbox-button .hamburguer span{
+	display: block;
+	height: 2px;
+	width: 24px;
+	background: var(--hamburger-color);
+	transform-origin: 50% 50%;
+	transition: all 0.1s 0.2s ease, transform 0.2s ease;
+}
+
+.lytbox-button .hamburguer span:nth-child(2) {
+	transform: translate(0, 6px);
+}
+
+.lytbox-button .hamburguer span:nth-child(3) {
+	transform: translate(0, 12px);
+		
+}
+
+.lytbox-nav_control {
+	position: absolute;
+	left: -9999px;
+	width: 100%;
+	clip: rect(0, 0, 0, 0);
+}
+
+.lytbox-nav_control:checked~.lytbox-navigation {
+	transform: translateX(0);
+	opacity: 1;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.lytbox-nav_control:checked~.lytbox-button .hamburguer {
+	transition: all 0.1s 0s ease;
+}
+
+
+
+
+
+/* closed X */
+
+.lytbox-nav_control:checked~.lytbox-button .hamburguer span {
+	background: var(--close-x-color);
+	transition: all 0.1s ease, transform 0.1s 0.2s ease;
+}
+
+.lytbox-nav_control:checked~.lytbox-button .hamburguer span:first-child {
+	opacity: 0;
+}
+
+.lytbox-nav_control:checked~.lytbox-button  .hamburguer span:nth-child(2) {
+	transform: translate(0, 6px) rotate(45deg);
+}
+
+.lytbox-nav_control:checked~.lytbox-button .hamburguer span:nth-child(3) {
+	transform: translate(0, 4px) rotate(-45deg);
+
+}
+
+.fade-up {
+    opacity: 0;
+}
+
+
+.grid-box {
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.grid-box img{
+    transition: all 0.3s ease-in-out;
+}
+
+.grid-playground .grid-box:hover img {
+    transform: scale(1.1); /* Zooms the image by 10% on hover */
+}
+
+.grid-playground .grid-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease; /* Smooth transition for blur */
+}
+
+/* Blur all images except the hovered one */
+.grid-playground .grid-box:hover img {
+    filter: none;
+}
+
+.grid-playground .grid:hover .grid-box:not(:hover) img {
+    filter: blur(5px); /* Adjust blur intensity here */
+}
+
+/* Fix this later
+
+.grid-playground .grid-box:hover img.social{
+    opacity: 1;
+}
+
+.social {
+  z-index: 1;
+    opacity: 0;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 15%;
+}
+
+*/
+
+.location {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 24px;
+}
+
+
+
+.location-left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: #f7f7f8;
+    padding: 2.5rem 3rem;
+}
+
+
+
+.location-right {
+    border-radius: 1rem;
+    overflow: hidden;
+    background-image: url('./img/giulia-salon.avif');
+    background-position: center;
+    background-size: cover;
+}
+
+.location-content {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: auto;
+    gap: 20px;
+}
+
+.location-content li {
+    font-size: 18px;
+    line-height: 1.556em;
+    /*list-style-type: disc;*/
+    padding: 10px;
+
+}
+
+.location-left h2 {
+    padding-bottom: 24px;
+}
+
+@media only screen and (max-width:768px) {
+    .location {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    }
+
+    .location-left {
+        padding: 1rem;
+    }
+}
+
+.scroller{
+    max-width: 100%;
+    overflow:hidden;
+}
+
+.testimonial {
+    scrollbar-width: none; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.scroller[data-animated="true"] {
+    overflow: hidden;
+    mask: linear-gradient(90deg, transparent,white 10%, white 90%, transparent);
+    -webkit-mask: linear-gradient(90deg, transparent,white 10%, white 90%, transparent);
+}
+
+
+.scroller[data-animated="true"] .testimonial {
+    flex-wrap: nowrap;
+    width: fit-content;
+    animation: scroll 30s linear infinite;
+}
+.testimonial::-webkit-scrollbar {
+    display: none; /* Chrome, Safari: Hides scrollbar */
+}
+
+@keyframes scroll {
+    to{
+        transform: translate(calc(-50% - 0.75rem));
+    }
+}
+
+/* Paused state */
+.scroller[data-animated="true"]:hover .testimonial,
+.scroller[data-animated="true"]:active .testimonial {
+    animation-play-state: paused; /* Pause animation */
+}
+
+.total-ratings {
+    display:flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3.125rem;
+}
+
+.rating-h-text {
+    font-weight: 700;
+}
+
+.total-ratings p.text-after-h-rating{
+    font-size: 1rem;
+    color: #8d8d95;
+}
+
+.total-ratings p{
+    font-size: 1.25rem;
+}
+
+.testimonials {
+    padding-bottom: 100px;
+}
+
+.testimonials h2{
+    padding-bottom: 3.125rem;
+}
+
+@media only screen and (max-width:768px) {
+    .testimonials h2{
+        padding-bottom: 1.5rem;
+    }
+
+    .total-ratings {
+        padding-bottom: 1.5rem;
+    }
+
+
+}
+
+
+.testimonial-box {
+    background-color: #f7f7f8;
+    padding: 1.625rem;
+    border-radius: 1rem;
+    width: 21.875rem;
+    flex-shrink: 0;
+}
+
+.testimonial-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.google-logo {
+    width: 2.5rem ;
+    height: 100%;
+}
+
+.testimonial-left h3 {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.testimonial-left {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem 0;
+}
+
+.testimonial p {
+    line-height: 1.7em;
+    padding-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.line-break {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 20px 0;
+    opacity: 0.7;
+}
