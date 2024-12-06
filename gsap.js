@@ -8,6 +8,29 @@ window.addEventListener('load', function () {
     });
   });
 
+  //scroll past header
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default anchor behavior
+
+        const targetId = this.getAttribute('href').slice(1); // Get target ID
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            // Dynamically calculate header height
+            const header = document.querySelector('header'); // Select your header
+            const headerHeight = header ? header.offsetHeight : 0;
+
+            const targetPosition = targetElement.offsetTop - headerHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth' // Smooth scrolling
+            });
+        }
+    });
+});
+
 
   //gsap
   gsap.registerPlugin(ScrollTrigger);
