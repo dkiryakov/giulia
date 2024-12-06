@@ -183,7 +183,7 @@ header {
 
 .hero {
     display: flex;
-    height: 696px;
+    height: 90vh;
     background-image: url('./img/beauty-and-wellness-hero-hair-x-webflow-template.jpg');
     background-position: center;
     background-size: cover;
@@ -385,7 +385,7 @@ h2 {
 
     .hero {
         padding: 1.5rem 1rem;
-        height: 90vh;
+        height: 80vh;
     }
 
     h1 {
