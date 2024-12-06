@@ -1,4 +1,12 @@
 window.addEventListener('load', function() {
+
+  //Resize window for ios bar - ref https://medium.com/@susiekim9/how-to-compensate-for-the-ios-viewport-unit-bug-46e78d54af0d
+  window.onresize = function() {
+    document.body.height = window.innerHeight;
+}
+window.onresize(); // called to initially set the height.
+
+  //Gsap animations
     gsap.registerPlugin(ScrollTrigger);
 
    
