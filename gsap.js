@@ -1,4 +1,15 @@
 window.addEventListener('load', function () {
+  //close lytbox menu on link click
+  // Select all links and the button in the lytbox navigation
+  document.querySelectorAll('.lytbox-link').forEach(link => {
+    link.addEventListener('click', () => {
+      // Uncheck the checkbox to close the menu
+      document.getElementById('nav-control').checked = false;
+    });
+  });
+
+
+  //gsap
   gsap.registerPlugin(ScrollTrigger);
 
 
@@ -19,7 +30,7 @@ window.addEventListener('load', function () {
     once: true, // Ensures animation happens only once
   });
 
-  ///newcode
+  ///testimonial animation
 
   const scrollers = document.querySelectorAll(".scroller");
 
