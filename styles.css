@@ -656,6 +656,8 @@ h2 {
     }
 }
 
+/* Scroller start */
+
 .scroller{
     max-width: 100%;
     overflow:hidden;
@@ -696,6 +698,8 @@ h2 {
 .scroller[data-animated="true"]:active .testimonial {
     animation-play-state: paused; /* Pause animation */
 }
+
+/* Scroller end */
 
 .total-ratings {
     display:flex;

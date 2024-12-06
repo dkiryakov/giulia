@@ -29,21 +29,53 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 }
 
 function addAnimation() {
+  const scrollers = document.querySelectorAll(".scroller");
+
   scrollers.forEach((scroller) => {
-    // add data-animated="true" to every `.scroller` on the page
+    // Add `data-animated="true"` to every `.scroller` on the page
     scroller.setAttribute("data-animated", true);
 
-    // Make an array from the elements within `.scroller-inner`
+    // Select the `.testimonial` container
     const scrollerInner = scroller.querySelector(".testimonial");
     const scrollerContent = Array.from(scrollerInner.children);
 
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
+    // Clone and append items for seamless scrolling
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
       scrollerInner.appendChild(duplicatedItem);
+    });
+
+    // Pause animation on hover/touch
+    scroller.addEventListener("mouseenter", () => {
+      scrollerInner.style.animationPlayState = "paused";
+    });
+
+    scroller.addEventListener("mouseleave", () => {
+      scrollerInner.style.animationPlayState = "running";
+    });
+
+    // Pause animation when user scrolls manually
+    let isScrolling;
+    scroller.addEventListener("scroll", () => {
+      scrollerInner.style.animationPlayState = "paused";
+
+      // Clear timeout if the user is still scrolling
+      clearTimeout(isScrolling);
+
+      // Resume animation after the user stops scrolling for 500ms
+      isScrolling = setTimeout(() => {
+        scrollerInner.style.animationPlayState = "running";
+      }, 500);
+    });
+
+    // Ensure touch interactions pause/resume smoothly
+    scroller.addEventListener("touchstart", () => {
+      scrollerInner.style.animationPlayState = "paused";
+    });
+
+    scroller.addEventListener("touchend", () => {
+      scrollerInner.style.animationPlayState = "running";
     });
   });
 }
